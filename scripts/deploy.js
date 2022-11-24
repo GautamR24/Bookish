@@ -4,28 +4,23 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-const hre = require("hardhat");
+//contract address = 0xe1D37698dCc19b9dc495bb4747BA3a15b89e7DCA
+//owner= 0x4CD0d36592c28cB218D3C59ba92328aff59908De
+const hre = require('hardhat')
+require('@nomiclabs/hardhat-ethers')
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
-
-  const lockedAmount = hre.ethers.utils.parseEther("1");
-
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+async function main () {
+  const [owner] = await hre.ethers.getSigners();
+  const bookContract = await hre.ethers.getContractFactory('bookStore');
+  const bookContract_deloyed = await bookContract.deploy();
+  await bookContract_deloyed.deployed();
+  console.log('nft deployed at', bookContract_deloyed.address);
+  console.log('owner', owner.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main().catch(error => {
+  console.error(error)
+  process.exitCode = 1
+})
