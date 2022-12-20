@@ -36,3 +36,123 @@
     transform: rotate(360deg);
   }
 }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+
+/* #myList {
+  border: thick solid blue;
+}
+#myList1 {
+  border: thick solid black;
+} */
+* {
+  box-sizing: border-box;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 250px;
+  
+}
+
+input[type=submit]:hover {
+  background-color: #e1efee;
+}
+
+.container {
+  border-radius: 5px;
+  background-image: linear-gradient(to right,#ff5f6d ,#ffc371);
+  padding: 50px;
+}
+
+.col-25 {
+  float: left;
+  width: 15%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+#connect-button{
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 2px 5px;
+  cursor: pointer;
+  width: 30%;
+  
+}
+#connect-button1{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-decoration: none;
+  margin: 2px 5px;
+  cursor: pointer;
+  width: 20%;
+}
+#imgid{
+   
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px;
+  width: 350px;
+  size: 2.5cm;
+
+}
+#storedbook{
+  font-size: large;
+  font-style: italic;
+  font-weight: 100;
+  font-family: monospace;
+  color: royalblue;
+}
+.popup{
+  visibility: hidden;
+}
+.open-popup{
+  visibility: visible;
+}
