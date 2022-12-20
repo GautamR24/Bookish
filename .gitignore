@@ -9,3 +9,7 @@ typechain-types
 cache
 artifacts
 
+rpclink.js
+sc.js
+etherapi.js
+privateac.js
